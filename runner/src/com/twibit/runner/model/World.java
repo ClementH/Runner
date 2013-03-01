@@ -25,16 +25,38 @@ public class World implements IWorld {
 
 		walls = new ArrayList<IWall>();
 
-		IWall bottom = new Wall(this, new Vector2(0, -2), new Vector2(5, 1), 0);
-		walls.add(bottom);
-		IWall left = new Wall(this, new Vector2(-2, 0), new Vector2(1, 5), 0);
-		walls.add(left);
-		IWall right = new Wall(this, new Vector2(2, -2), new Vector2(1, 5), 0);
-		walls.add(right);
-		IWall top = new Wall(this, new Vector2(0, 5), new Vector2(5, 1), 0);
-		walls.add(top);
+		IWall w;
+		w = new Wall(this, new Vector2(0, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(0, 1), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(0, 2), new Vector2(1, 1), 0);
+		walls.add(w);
 
-		IWall floor = new Wall(this, new Vector2(-500, -10), new Vector2(1000, 3), 0);
+		
+		w = new Wall(this, new Vector2(1, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(2, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(3, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(4, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(5, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		
+		w = new Wall(this, new Vector2(-1, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(-2, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(-3, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(-4, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		w = new Wall(this, new Vector2(-5, 0), new Vector2(1, 1), 0);
+		walls.add(w);
+		
+		IWall floor = new Wall(this, new Vector2(-500, -5), new Vector2(1000, 3), 0);
 		walls.add(floor);
 
 	}

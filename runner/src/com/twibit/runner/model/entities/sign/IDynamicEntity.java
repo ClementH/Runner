@@ -3,12 +3,12 @@ package com.twibit.runner.model.entities.sign;
 import com.badlogic.gdx.math.Vector2;
 
 /**
- * Represent a movable entity with a velocity and a rotation value
+ * Represent a dynamic entity with a weight, friction and bounce
  */
 public interface IDynamicEntity extends IEntity {
 
 	/**
-	 * Return the friction value
+	 * Return the friction value between 0 and 1. (0->no friction, 1->max friction)
 	 * 
 	 * @return friction
 	 */

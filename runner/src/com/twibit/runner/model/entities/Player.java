@@ -24,7 +24,7 @@ public class Player extends DynamicEntity implements IPlayer {
 	public Player(IWorld world, Vector2 position, Vector2 size, float rotation) {
 		super(world, "player", position, size, rotation);
 		setGravityForce(new Vector2(0, -9.81f));
-		setFriction(5f);
+		setFriction(0.1f);
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class Player extends DynamicEntity implements IPlayer {
 		if (input.buttons[InputHandler.UP]) {
 
 			if (isOnFloor()) {
-				this.getVelocity().y += 5;
+				this.getVelocity().y += 10;
 				setOnFloor(false);
 				setJumping(true);
 			}

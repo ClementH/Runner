@@ -71,13 +71,14 @@ public abstract class DynamicEntity extends MovableEntity implements IDynamicEnt
 	@Override
 	public void setFriction(float friction) {
 		this.friction = friction;
+		if(friction > 1){ this.friction = 1;}
+		if(friction < 0){ this.friction = 0;}
 	}
 
 	@Override
 	public void applyFriction(float delta) {
-		//TODO : à revoir
-		Vector2 frictionForce = getVelocity().tmp().mul(-friction*delta);
-		this.getVelocity().add(frictionForce);
+		float speed = this.getSpeed();
+		this.setSpeed(speed - (speed * friction));
 	}
 
 }
