@@ -8,6 +8,29 @@ import com.badlogic.gdx.math.Vector2;
 public interface IDynamicEntity extends IEntity {
 
 	/**
+	 * Return the friction value
+	 * 
+	 * @return friction
+	 */
+	public float getFriction();
+
+	/**
+	 * Set a new friction value
+	 * 
+	 * @param friction
+	 */
+	public void setFriction(float friction);
+
+	/**
+	 * Update the velocity according to the friction. This will only change the
+	 * velocity. To apply the real movement, we need to call
+	 * MovableEntity.applyMovement()
+	 * 
+	 * @param delta
+	 */
+	public void applyFriction(float delta);
+
+	/**
 	 * Return the gravity force vector in m/s
 	 * 
 	 * @return gravityForce

@@ -7,6 +7,7 @@ import com.twibit.runner.model.entities.sign.IDynamicEntity;
 public abstract class DynamicEntity extends MovableEntity implements IDynamicEntity {
 
 	private Vector2 gravityForce;
+	private float friction;
 
 	/**
 	 * Constructor
@@ -60,6 +61,23 @@ public abstract class DynamicEntity extends MovableEntity implements IDynamicEnt
 	public void update(float delta) {
 		applyGravity(delta);
 		applyMovement(delta);
+	}
+
+	@Override
+	public float getFriction() {
+		return this.friction;
+	}
+
+	@Override
+	public void setFriction(float friction) {
+		this.friction = friction;
+	}
+
+	@Override
+	public void applyFriction(float delta) {
+		//TODO : à revoir
+		Vector2 frictionForce = getVelocity().tmp().mul(-friction*delta);
+		this.getVelocity().add(frictionForce);
 	}
 
 }

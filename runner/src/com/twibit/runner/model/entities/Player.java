@@ -24,6 +24,7 @@ public class Player extends DynamicEntity implements IPlayer {
 	public Player(IWorld world, Vector2 position, Vector2 size, float rotation) {
 		super(world, "player", position, size, rotation);
 		setGravityForce(new Vector2(0, -9.81f));
+		setFriction(5f);
 	}
 
 	@Override
@@ -50,6 +51,10 @@ public class Player extends DynamicEntity implements IPlayer {
 		// Calculate forces
 		if (!isOnFloor()) {
 			applyGravity(delta);
+		} else {
+			if (!input.buttons[InputHandler.LEFT] && !input.buttons[InputHandler.RIGHT]) {
+				applyFriction(delta);
+			}
 		}
 
 		// Collision detection
